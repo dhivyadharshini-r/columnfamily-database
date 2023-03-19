@@ -1,0 +1,179 @@
+/ # hbase shell
+2023-03-16 17:50:10,648 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 1.3.2, r1bedb5bfbb5a99067e7bc54718c3124f632b6e17, Mon Mar 19 18:47:19 UTC 2018
+
+hbase(main):001:0> create 'Ticket_Reservation','Passenger_details','Train','station'
+0 row(s) in 1.9210 seconds
+=> Hbase::Table - Ticket_Reservation
+hbase(main):002:0> list
+TABLE                                                                                                                                                           
+Ticket_Reservation                                                                                                                                                         
+1 row(s) in 0.0590 seconds
+
+=> ["Ticket_Reservation"]
+hbase(main):003:0> put 'Ticket_Reservation','01','Passenger_details : name','dhivya'
+0 row(s) in 0.3020 seconds
+
+hbase(main):004:0> put 'Ticket_Reservation','01','Passenger_details : gender','female'
+0 row(s) in 0.0280 seconds
+
+hbase(main):005:0> put 'Ticket_Reservation','01','Passenger_details : age','29'
+0 row(s) in 0.0250 seconds
+
+hbase(main):006:0> put 'Ticket_Reservation',01','Passenger_details : mobileno','9867543969'
+0 row(s) in 0.0140 seconds
+
+hbase(main):008:0> put 'Ticket_Reservation','01','Train : name','bangalore express'
+0 row(s) in 0.0300 seconds
+
+hbase(main):009:0> put 'Ticket_Reservation','01','Train : class','first class'
+0 row(s) in 0.0140 seconds
+
+hbase(main):010:0> put 'Ticket_Reservation','01','station : starting point','erode'
+0 row(s) in 0.0190 seconds
+
+hbase(main):011:0> put 'Ticket_Reservation','01','station : leaving point','bangalore'
+0 row(s) in 0.0220 seconds
+
+hbase(main):012:0> put 'Ticket_Reservation','02','Passenger_details : name','Ravi'
+0 row(s) in 0.0270 seconds
+
+hbase(main):013:0> put 'Ticket_Reservation','02','Train : name','SRP express'
+0 row(s) in 0.0220 seconds
+
+hbase(main):014:0> put 'Ticket_Reservation','02','Passenger_details : mobileno','9856745676'
+0 row(s) in 0.0160 seconds
+
+hbase(main):015:0> put 'Ticket_Reservation','02','station : starting point','chennai'
+0 row(s) in 0.0270 seconds
+
+hbase(main):016:0> put 'Ticket_Reservation','03','Passenger_details : name','Vasanth'
+0 row(s) in 0.0250 seconds
+
+hbase(main):017:0> put 'Ticket_Reservation','03','Passenger_details : gender','male'
+0 row(s) in 0.0240 seconds
+
+hbase(main):018:0> put 'Ticket_Reservation','03','Train : name','Mysuru express'
+0 row(s) in 0.0290 seconds
+
+hbase(main):019:0> put 'Ticket_Reservation','03','Train : class','second class'
+0 row(s) in 0.0200 seconds
+
+hbase(main):020:0> put 'Ticket_Reservation','03','station :starting point','chennai'
+0 row(s) in 0.0190 seconds
+
+hbase(main):021:0> put 'Ticket_Reservation','03','station : leaving point','mysore'
+0 row(s) in 0.0250 seconds
+
+hbase(main):022:0> get 'Ticket_Reservation','01'
+COLUMN                                                            CELL                                                                                                                  
+station:starting point                                   timestamp=1678990472589, value=erode                                                                                 
+station:leaving point                                    timestamp=1678990435991, value=bangalore                                                                                
+Passenger_details:name                                   timestamp=1678990078779, value=dhivya                                                                              
+Passenger_details:gender                                 timestamp=1678990151721, value=female                                                                      
+Passenger_details:mobileno                               timestamp=1678990107273, value=9867543969                                                                             
+Passenger_details:age                                    timestamp=1678989957023, value=29                                                                               
+Train:name                                               timestamp=1678990377698, value=banglore express                                                                                
+Train:class                                              timestamp=1678990340801, value=first class                                                                               
+1 row(s) in 0.1690 seconds
+
+hbase(main):023:0> get 'Ticket_Reservation','02'
+COLUMN                                               CELL                                                                                                                  
+Train:name                                           timestamp=1678990877495, value=SRP express                                                                                 
+station:starting point                               timestamp=1678990697077, value=chennai                                                                       
+Passenger_details:mobileno                           timestamp=1678990789753, value=9856745676                                                                             
+Passenger_details:name                               timestamp=1678990632340, value=ravi                                                                                    
+1 row(s) in 0.0490 seconds
+
+hbase(main):024:0> get 'Ticket_Reservation','03'
+COLUMN                                         CELL                                                                                                                  
+station:starting point                         timestamp=1678991191832, value=chennai                                                                                
+station:leaving point                          timestamp=1678991043431, value=mysore                                                                            
+Passenger_details:name                         timestamp=1678990957427, value=Vasanth                                                                                  
+Passenger_details:gender                       timestamp=1678990989731, value=male                                                                                    
+Train:name                                     timestamp=1678991104761, value=Mysuru express                                                                                  
+Train:class                                    timestamp=1678991138389, value=second class                                                                              
+1 row(s) in 0.0720 seconds
+
+hbase(main):025:0> scan 'Ticket_Reservation'
+ROW                                  COLUMN+CELL                                                                                                           
+ 01                                       column=station:starting point, timestamp=1678990472589, value=erode                                                      
+ 01                                       column=station:leaving point, timestamp=1678990435991, value=bangalore                                                        
+ 01                                       column=Passenger_details:name, timestamp=1678990078779, value=dhivya                                                       
+ 01                                       column=Passenger_details:gender, timestamp=1678990151721, value=female                                               
+ 01                                       column=Passenger_details:mobileno, timestamp=1678990107273, value=9867543969                                                    
+ 01                                       column=Passenger_details:age, timestamp=1678989957023, value=29                                                           
+ 01                                       column=Train:name, timestamp=1678990377698, value=bangalore express                                                      
+ 01                                       column=Train:class, timestamp=1678990340801, value=first class                                                      
+ 02                                       column=Train:name, timestamp=1678990877495, value=SRP express                                                       
+ 02                                       column=station:starting point, timestamp=1678990697077, value=chennai                                                  
+ 02                                       column=Passenger_details:mobileno, timestamp=1678990789753, value=9856745676                                                    
+ 02                                       column=Passenger_details:name, timestamp=1678990632340, value=ravi                                                               
+ 03                                       column=station:starting point, timestamp=1678991191832, value=chennai                                                        
+ 03                                       column=station:leaving point, timestamp=1678991043431, value=mysore                                                    
+ 03                                       column=Passenger_details:name, timestamp=1678990957427, value=Vasanth                                                             
+ 03                                       column=Passenger_details:gender, timestamp=1678990989731, value=male
+ 03                                       column=Train:name, timestamp=1678991104761, value=Mysuru express                                                        
+ 03                                       column=Train:class, timestamp=1678991138389, value=second                                                    
+3 row(s) in 0.2030 seconds
+
+hbase(main):026:0> put 'Ticket_Reservation','01','Passenger_details','mobileno'
+0 row(s) in 0.0150 seconds
+
+hbase(main):027:0> get 'Ticket_Reservation','01'
+COLUMN                                                      CELL                                                                                                                  
+station:starting point                                      timestamp=1678990472589, value=erode                                                                                 
+station:leaving point                                       timestamp=1678991576213, value=bangalore                                                                                
+Passenger_details:name                                      timestamp=1678990078779, value=dhivya                                                                              
+Passenger_details:gender                                    timestamp=1678990151721, value=female                                                                      
+Passenger_details:age                                       timestamp=1678990107273, value=29                                                                             
+Train:name                                                  timestamp=1678989957023, value=bangalore express                                                                                
+Train:class                                                 timestamp=1678990377698, value=first class                                                                                                                                            
+1 row(s) in 0.0990 seconds
+
+hbase(main):028:0> put 'Ticket_Reservation','02','Train : leaving point','delhi'
+0 row(s) in 0.0270 seconds
+
+hbase(main):029:0> get 'Ticket_Reservation','02'
+COLUMN                                                      CELL                                                                                                                  
+Train:name                                                  timestamp=1678990877495, value=SRP express                                                                                 
+station:starting point                                      timestamp=1678990697077, value=chennai                                                                        
+Passenger_details:mobileno                                  timestamp=1678990789753, value=9856745676                                                                             
+Passenger_details:name                                      timestamp=1678990632340, value=ravi                                                                                    
+station:leaving point                                       timestamp=1678991822022, value=delhi                                                                           
+1 row(s) in 0.0470 seconds
+
+hbase(main):030:0> delete 'Ticket_Reservation','03','Passenger_details : gender','male'
+0 row(s) in 0.0870 seconds
+
+hbase(main):031:0> get 'Ticket_Reservation','03'
+COLUMN                                                         CELL                                                                                                                  
+station:starting point                                timestamp=1678991043431, value=chennai                                                                            
+station:leaving point                                 timestamp=1678990957427, value=mysore                                                                                  
+Passenger_details:name                                timestamp=1678990989731, value=Vasanth                                                                                    
+Train:name                                            timestamp=1678991104761, value=Mysuru express                                                                                  
+Train:class                                           timestamp=1678991138389, value=second class                                                                              
+1 row(s) in 0.0340 seconds
+
+hbase(main):032:0> scan 'Ticket_Reservation'
+ROW                                  COLUMN+CELL                                                                                                           
+ 01                                       column=station:starting point, timestamp=1678990472589, value=erode                                                       
+ 01                                       column=station:leaving point, timestamp=1678991576213, value=bangalore                                                         
+ 01                                       column=Passenger_details:name, timestamp=1678990078779, value=dhivya                                                       
+ 01                                       column=Passenger_details:gender, timestamp=1678990151721, value=female                                                
+ 01                                       column=Passenger_details:age, timestamp=1678990107273, value=29                                                    
+ 01                                       column=Train:name, timestamp=1678989957023, value=bangalore express                                                           
+ 01                                       column=Train:class, timestamp=1678990377698, value=first class                                                      
+ 02                                       column=Train:name, timestamp=1678990340801, value=SRP express                                                      
+ 02                                       column=station:starting point, timestamp=1678990877495, value=chennai                                                     
+ 02                                       column=Passenger_details:mobileno, timestamp=1678990697077, value=9856745676                                                  
+ 02                                       column=Passenger_details:name, timestamp=1678990789753, value=ravi                                                    
+ 02                                       column=station:leaving point, timestamp=1678990632340, value=delhi                                                               
+ 03                                       column=station:starting point, timestamp=1678991822022, value=chennai                                                  
+ 03                                       column=station:leaving point, timestamp=1678991043431, value=mysore                                                    
+ 03                                       column=Passenger_details:name, timestamp=1678990957427, value=Vasanth                                                             
+ 03                                       column=Train:name, timestamp=1678990989731, value=Mysuru express                                                          
+ 03                                       column=Train:class, timestamp=1678991104761, value=second class                                                                                                    
+3 row(s) in 0.1450 seconds
