@@ -1,5 +1,4 @@
-Railway Ticket Reservation using HBase 
-
+  #Railway Ticket Reservation using HBase 
      HBase is a distributed column-oriented database built on top of the Hadoop file system. It is an open-source project and is horizontally scalable.In this application, we are creating a column family database using HBase for Railway ticket reservation.
  TABLE NAME: 
            Ticket _Reservation
