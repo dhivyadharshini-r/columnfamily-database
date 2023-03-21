@@ -9,16 +9,17 @@ reservation.
 
          TABLE NAME:  Ticket _Reservation
 
-   The table contains the attributes like,
-            Passenger_details(name,gender,age,mobile no)
-            Train( name, class)
-            Station(starting point, leaving point)
+   The table contains the attributes:
+            Passenger_details(name,gender,age,mobile no).
+            Train( name, class).
+            Station(starting point, leaving point).
  
 OPERATIONS USED:
      In the application the operations like 
 INSERT, UPDATE and DELETE are used.
 
 KEYWORDS USED:
+
    1.put - it is used to put  the data in the table.
 
    2.get - it is used to retrieve the values in the 
