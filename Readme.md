@@ -19,11 +19,11 @@ OPERATIONS USED:
 INSERT, UPDATE and DELETE are used.
 
 KEYWORDS USED:
-put - it is used to put  the data in the table
-get - it is used to retrieve the values in the 
+   1.put - it is used to put  the data in the table
+   2.get - it is used to retrieve the values in the 
 table.
 
 SYNTAX:
-          INSERT - put 'table_name', 'row_key','column_family:column_name','value'
-          GET - get 'table_name', 'row_key'.
-          DELETE -  'table_name', 'row_key'.
+    1. INSERT - put 'table_name', 'row_key','column_family:column_name','value'
+    2. GET - get 'table_name', 'row_key'.
+    3. DELETE -  'table_name', 'row_key'.
