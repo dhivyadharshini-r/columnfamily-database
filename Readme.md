@@ -10,9 +10,9 @@ reservation.
          TABLE NAME:  Ticket _Reservation
 
    The table contains the attributes like,
-Passenger_details( name,gender,age,mobile no)
-Train( name, class)
-Station(starting point, leaving point)
+         Passenger_details( name,gender,age,mobile no)
+         Train( name, class)
+         Station(starting point, leaving point)
  
 OPERATIONS USED:
      In the application the operations like 
@@ -24,6 +24,6 @@ get - it is used to retrieve the values in the
 table.
 
 SYNTAX:
-INSERT - put 'table_name', 'row_key','column_family:column_name','value'
-GET - get 'table_name', 'row_key'.
-DELETE -  'table_name', 'row_key'.
+          INSERT - put 'table_name', 'row_key','column_family:column_name','value'
+          GET - get 'table_name', 'row_key'.
+          DELETE -  'table_name', 'row_key'.
