@@ -29,6 +29,7 @@ KEYWORDS USED:
 table.
 
 SYNTAX:
+
     1. INSERT - put 'table_name', 'row_key','column_family:column_name','value'
 
     2. GET - get 'table_name', 'row_key'.
