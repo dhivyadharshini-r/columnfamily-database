@@ -7,7 +7,7 @@ In this application, we are creating a column
 family database using HBase for Railway ticket 
 reservation.
 
-         TABLE NAME:  Ticket _Reservation
+         TABLE NAME:  Ticket_Reservation
 
    The table contains the attributes:
 
