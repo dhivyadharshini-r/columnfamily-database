@@ -10,8 +10,11 @@ reservation.
          TABLE NAME:  Ticket _Reservation
 
    The table contains the attributes:
+
             Passenger_details(name,gender,age,mobile no).
+
             Train( name, class).
+
             Station(starting point, leaving point).
  
 OPERATIONS USED:
@@ -27,5 +30,7 @@ table.
 
 SYNTAX:
     1. INSERT - put 'table_name', 'row_key','column_family:column_name','value'
+
     2. GET - get 'table_name', 'row_key'.
+
     3. DELETE -  'table_name', 'row_key'.
